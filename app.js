@@ -78,7 +78,10 @@ let result_array = [];
 //Main Function To scrap odds
 async function openbrowser() {
     //create browser instance
-    const browser = await puppeteer.launch();
+    // const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        executablePath: "/usr/bin/google-chrome",
+    });
     const page = await browser.newPage();
 
     // Navigate the page to a URL
