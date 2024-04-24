@@ -1,0 +1,636 @@
+<html>
+
+<head>
+    <title> SHAKTIBOOK: Online Sports Betting and Casino Sites in India </title>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Load jQuery from a CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <style>
+        .navbar {
+            padding: 0px !important;
+        }
+
+        .active {
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+
+
+        }
+
+        .top_cards {
+            margin-left: 20px;
+            border-radius: 12px;
+            height: 200px;
+            align-items: center;
+
+        }
+
+        .large_buttons {
+            width: 40px;
+        }
+
+        .card_text {
+            font-weight: 900;
+            font-size: 19px
+        }
+
+        body {
+            background: linear-gradient(0deg, rgba(35, 41, 57, 1) 0%, rgba(29, 34, 47, 1) 100%);
+        }
+
+        .sports_cards::before {
+            content: "";
+            height: 40%;
+            width: 4px;
+            background-color: #f7b230;
+            position: absolute;
+            left: 0px;
+            top: 35px;
+        }
+
+        .sports_cards::after {
+            content: "";
+            height: 40%;
+            width: 4px;
+            background-color: #f7b230;
+            /* Different color */
+            position: absolute;
+            right: 0px;
+            /* Positioned to the right */
+            top: 35px;
+        }
+
+        .top_games {
+            position: relative
+        }
+
+        .top_games::before {
+            content: "";
+            height: 80%;
+            width: 2px;
+            background-color: #f7b230;
+            position: absolute;
+            left: 0px;
+            top: 10%;
+        }
+
+        .top_games::after {
+            content: "";
+            height: 80%;
+            width: 2px;
+            background-color: #f7b230;
+            position: absolute;
+            right: 0px;
+            top: 10%;
+        }
+
+        .sports_cards {
+            height: 100px;
+            align-items: center;
+            border-radius: 18px;
+            background-color: #353d52;
+        }
+
+        .inner_sports_cards {
+            align-self: center;
+            width: 100%;
+            justify-content: space-between;
+
+            margin-left: 10px;
+
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            /* Adjust spacing between items */
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #fff;
+            /* Link color */
+        }
+
+        ul li a:hover {
+            color: #555;
+            /* Hover color */
+        }
+
+        .footer {
+            border-radius: 18px;
+            background-color: #353d52;
+            padding-top: 12px;
+            margin-bottom: 12px;
+            padding-bottom: 8px
+        }
+
+        .btn-with-bg {
+            background: url(assets/images/Button-Background.png);
+            background-size: cover;
+            /* Adjust as needed */
+            /* Additional styling */
+            color: black;
+            font-weight: bold;
+            border-radius: 12px
+        }
+
+        .bg-light {
+            background-color: #151c2f !important;
+            color: white;
+            border-radius: 18px
+        }
+
+        .nav-link {
+            color: white
+        }
+
+        .backodds {
+            background: #72bbef;
+            border-radius: 4px;
+            padding: 14px;
+            font-size: 14px;
+            text-align: center;
+            margin: 0 2px;
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            font-weight: 900;
+        }
+
+        .oddlay {
+            background: #f492b7;
+            border-radius: 4px;
+            padding: 14px;
+            font-size: 14px;
+            text-align: center;
+            margin: 0 2px;
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            font-weight: 900;
+
+        }
+
+        #myBar {
+
+            height: 10px;
+
+            text-align: center;
+            font-weight: bold;
+            /* To center it horizontally (if you want) */
+            line-height: 30px;
+            /* To center it vertically */
+            color: DD721E;
+        }
+
+
+
+        ul li {
+            border-bottom: 2px solid #c7c8ca;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        div.vsName {
+            color: #333;
+            font-weight: bold;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+
+        }
+
+        .green-dot {
+            display: inline-block;
+            background-color: green;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+
+        }
+
+        .heading {
+            background-color: #151c2f;
+            color: white;
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            height: 40px;
+            align-items: center;
+            font-weight: bold
+        }
+
+        .table-row {
+            border-bottom-left-radius: 18px;
+            border-bottom-right-radius: 18px;
+            color: white;
+            background-color: #353d52;
+            padding: 10px;
+        }
+
+        .odd_box {
+            border-radius: 18px;
+            background-color: #151c2f;
+            height: 60px;
+            width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .team_name::after {
+
+            content: "";
+            height: 60%;
+            width: 2px;
+            background-color: #fff;
+            position: absolute;
+            right: 0px;
+            top: 15px;
+
+        }
+
+        .lay::after {
+            content: "";
+            height: 60%;
+            width: 2px;
+            background-color: #fff;
+            position: absolute;
+            right: 0px;
+            top: 15px;
+        }
+
+        .container-odds {
+            width: 100%
+        }
+
+        .navbar-light .navbar-toggler-icon {
+            background-image: url(data:image/jpeg;base64,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)
+        }
+
+        @media (max-width: 767px) {
+            .card_button {
+                width: 100%;
+                font-size: 10px;
+                white-space: nowrap;
+                /* Prevent text wrapping */
+
+                /* Hide overflowing text */
+                text-overflow: ellipsis;
+                /* Show ellipsis (...) for overflowed text */
+            }
+
+            .card_text {
+                font-weight: 900;
+                font-size: 19px
+            }
+
+            .large_card {
+                margin-top: 20px;
+            }
+
+            .large_buttons {
+                width: 30px;
+            }
+
+            .sports_cards {
+                margin-top: 5px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .contaner {
+                padding-left: 0px;
+                padding-right: 0px
+            }
+
+            .odd_box {
+                font-size: 9px;
+                height: 44px
+            }
+
+            .heading {
+                font-size: 9px
+            }
+
+            .team1 {
+                font-size: 9px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="oddsContainer">
+
+    </div>
+    <div id="app">
+        <header style=" padding:10px">
+            <div claas="row d-flex  align-items-center" style="display: flex;
+            align-items: center;
+        ">
+                <div class="col-lg-10">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="#">
+                            <img src="https://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg" width="30"
+                                height="30" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/" style=" color: #fff;">Home </a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/cricket" style=" color: #fff;">Cricket</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/tennis" style=" color: #fff;">Tennis</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" style=" color: #fff;">Socceer</a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-lg-2 d-none d-lg-block">
+                    <button class="btn btn-outline-success my-2 my-sm-0 display-inline-block whatsapp">
+                        JOIN ON WHATSAPP
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="container mt-3">
+            <span class="mt-3 mb-2" style="font-weight:bold;font-size:18px;color:white">Match Odds</span>
+            {{!-- Odds Section --}}
+
+        </div>
+    </div>
+    {{!-- Odds Section End --}}
+
+    </div>
+    </div>
+    {{!-- Odds table --}}
+    {{!-- <div class="container" style=" border-radius:18px">
+        <div class="heading d-flex">
+            <div class="col-4">IPL MATCH 24</div>
+            <div class="col-2" style="    display: flex;
+    justify-content: center;">Back </div>
+            <div class="col-2" style="    display: flex;
+    justify-content: center;">Lay </div>
+            <div class="col-2">Win Probablity </div>
+        </div>
+        <div class="table-row d-flex mb-3">
+            <div class="col-4 team_name"><span class="team1">Punjab Kings</span><br>
+                <span class="team2">Punjab Kings</span>
+            </div>
+            <div class="col-2 " style="    display: flex;
+    justify-content: center;">
+                <div class="odd_box">211</div>
+            </div>
+            <div class="col-2 lay " style="    display: flex;
+    justify-content: center;">
+                <div class="odd_box">211</div>
+            </div>
+        </div>
+
+    </div> --}}
+    {{!-- Odds table end --}}
+    <div id="oddsList"></div>
+
+
+    <div class="container mt-3 footer">
+        <div class="row d-flex " style="justify-content: space-evenly;border-bottom:1px solid #f7b230">
+            <div class="col-3">
+                <ul>
+                    <li><span style="color:#f7b230;font-weight:bold">About</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Responible Gaming</a></li>
+                    <li><a href="#">Affliate</a></li>
+
+                </ul>
+            </div>
+            <div class="col-3">
+                <ul>
+                    <li><span style="color:#f7b230;font-weight:bold">Help</a></li>
+                    <li><a href="#">FAQ's </a></li>
+                    <li><a href="#">Contact Us </a></li>
+
+                </ul>
+            </div>
+            <div class="col-3">
+                <ul>
+                    <li><span style="color:#f7b230;font-weight:bold">Regulations</a></li>
+                    <li><a href="#">T & C</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+
+                </ul>
+                <div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mt-2 d-flex" style="justify-content: center;">
+            <span style="color:white;text-align:center;font-weight: bold;">Copyright Shiva Exchange</span>
+            <div id="oddsContainer">
+
+            </div>
+        </div>
+    </div>
+
+</body>
+{{!--
+<script>
+    $(document).ready(function () {
+
+        setInterval(function () {
+            $.ajax({
+                url: '/tennis-odds',
+                method: 'GET',
+                dataType: 'json',
+                success: function (response) {
+                    console.log('Success:', response);
+                    // Clear the existing content before appending new data
+                    $('#oddsList').empty();
+
+                    // Iterate over each item in the response
+                    response.odds.forEach(function (item) {
+                        // Create a new li element for each item
+                        var li = $('<li>', { class: 'd-flex align-items-center flex-column flex-sm-row col-12', 'data-vsnameurl': item.vsNameUrl });
+
+                        // Append the vsName to the li element
+                        li.append($('<div>', { class: 'col-12 col-lg-6 d-flex vsname', text: item.vsName }));
+                        var parentDiv = $('<div>', { class: 'col-12 col-lg-6 d-flex align-self-start' });
+                        // Iterate over backOdds and layOdds arrays
+                        for (var i = 0; i < item.backOdds.length; i++) {
+                            // Create div elements for back odds and lay odds
+                            var backOddsDiv = $('<div>', { class: 'backodds' }).append($('<em>', { text: item.backOdds[i] }));
+                            var layOddsDiv = $('<div>', { class: 'oddlay' }).append($('<em>', { text: item.layOdds[i] }));
+
+                            // Append back odds and lay odds divs to the li element
+                            parentDiv.append(backOddsDiv, layOddsDiv);
+                            li.append(parentDiv);
+                        }
+
+                        // Append the li element to the ul
+                        $('#oddsList').append(li);
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', error);
+                    // Handle the error here
+                }
+            });
+        }, 500);
+    });
+
+</script> --}}
+{{!--
+<script>
+    $(document).ready(function () {
+        setInterval(function () {
+            $.ajax({
+                url: '/tennis-odds',
+                method: 'GET',
+                dataType: 'json',
+                success: function (response) {
+                    console.log('Success:', response);
+                    // Clear the existing content before appending new data
+                    $('#oddsList').empty();
+
+                    // Iterate over each item in the response
+                    response.odds.forEach(function (item) {
+                        // Create a new div element for each item
+                        var div = $('<div>', { class: 'container', style: 'border-radius: 18px' });
+
+                        // Create heading div
+                        var headingDiv = $('<div>', { class: 'heading d-flex' });
+                        headingDiv.append(
+                            $('<div>', { class: 'col-4', text: 'IPL MATCH 24' }),
+                            $('<div>', { class: 'col-2', text: 'Back', style: 'display: flex; justify-content: center;' }),
+                            $('<div>', { class: 'col-2', text: 'Lay', style: 'display: flex; justify-content: center;' }),
+                            $('<div>', { class: 'col-2', text: 'Win Probability' })
+                        );
+
+                        // Create table-row div
+                        var tableRowDiv = $('<div>', { class: 'table-row d-flex mb-3' });
+                        tableRowDiv.append(
+                            $('<div>', { class: 'col-4 team_name' }).append(
+                                $('<span>', { class: 'team1', text: item.vsName }),
+
+                            ),
+                            $('<div>', { class: 'col-2', style: 'display: flex; justify-content: center;' }).append(
+                                $('<div>', { class: 'odd_box', text: item.backOdds[0] }) // Display only the first back odds
+                            ),
+                            $('<div>', { class: 'col-2 lay', style: 'display: flex; justify-content: center;' }).append(
+                                $('<div>', { class: 'odd_box', text: item.layOdds[0] }) // Display only the first lay odds
+                            )
+                        );
+
+                        // Append headingDiv and tableRowDiv to the main div
+                        div.append(headingDiv, tableRowDiv);
+
+                        // Append the div to the oddsList container
+                        $('#oddsList').append(div);
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', error);
+                    // Handle the error here
+                }
+            });
+        }, 500);
+    });
+
+</script> --}}
+<script>
+    $(document).ready(function () {
+        setInterval(function () {
+            $.ajax({
+                url: '/tennis-odds',
+                method: 'GET',
+                dataType: 'json',
+                success: function (response) {
+                    console.log('Success:', response);
+                    // Clear the existing content before appending new data
+                    $('#oddsList').empty();
+
+                    // Iterate over each item in the response
+                    response.odds.forEach(function (item) {
+                        // Calculate win probability
+                        var winProbability = 1 / (parseFloat(item.backOdds[0]) + 1); // Assuming backOdds[0] is the decimal odds
+
+                        // Create a new div element for each item
+                        var div = $('<div>', { class: 'container-odds', style: 'border-radius: 18px' });
+
+                        // Create heading div
+                        var headingDiv = $('<div>', { class: 'heading d-flex' });
+                        headingDiv.append(
+                            $('<div>', { class: 'col-4', text: ' TENNIS' }),
+                            $('<div>', { class: 'col-2', text: 'Back', style: 'display: flex; justify-content: center;' }),
+                            $('<div>', { class: 'col-2', text: 'Lay', style: 'display: flex; justify-content: center;' }),
+                            $('<div>', { class: 'col-2', text: 'Win Probability', style: 'display: flex; justify-content: center;align-items:center' })
+                        );
+
+                        // Create table-row div
+                        var tableRowDiv = $('<div>', { class: 'table-row d-flex mb-3' });
+                        tableRowDiv.append(
+                            $('<div>', { class: 'col-4 team_name' }).append(
+                                $('<span>', { class: 'team1', style: 'font-weight:bold', text: item.vsName }),
+                            ),
+                            $('<div>', { class: 'col-2', style: 'display: flex; justify-content: center;' }).append(
+                                $('<div>', { class: 'odd_box', text: item.backOdds[0] }) // Display only the first back odds
+                            ),
+                            $('<div>', { class: 'col-2 lay', style: 'display: flex; justify-content: center;' }).append(
+                                $('<div>', { class: 'odd_box', text: item.layOdds[0] }) // Display only the first lay odds
+                            ),
+                            $('<div>', { class: 'col-2 d-flex', style: 'align-items:center;justify-content:center' }).append(
+                                $('<div>', { style: 'align-self: center;font-weight:bold;color:#dd721e' }).text((winProbability * 100).toFixed(2) + '%')
+                            )
+                        );
+
+                        // Append headingDiv and tableRowDiv to the main div
+                        div.append(headingDiv, tableRowDiv);
+
+                        // Append the div to the oddsList container
+                        $('#oddsList').append(div);
+
+
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', error);
+                    // Handle the error here
+                }
+            });
+        }, 300);
+    });
+
+</script>
+
+</html>
